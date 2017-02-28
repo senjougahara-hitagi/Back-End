@@ -12,7 +12,7 @@ $(document).ready(function(){
   });
 
   $('body').on('click', '.trigger_of_pop_up', function(){
-    var itemId = $(this).attr('data-item-id');console.log(loadedData);
+    var itemId = $(this).attr('data-item-id');
     for(var i = 0; i < loadedData.length; i++){
       var itemData = loadedData[i];
       if(itemData.idShop == itemId){
@@ -42,7 +42,7 @@ $(document).ready(function(){
   var listShopTemplate = Handlebars.compile(source);
   $.ajax({
     type : "get",
-    url  : "/api/data/shop",
+    url  : "/api/shop/all",
     contentType : "application/json"
   }).then(function(data){
     var itemHtml = listShopTemplate(data);
