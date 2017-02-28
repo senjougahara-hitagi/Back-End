@@ -5,4 +5,5 @@ module.exports = function(app) {
   app.use('/api/user', require('./api/user'));
   app.use('/api/test', require('./api/test'));
   app.use('/api/data', require('./api/data'));
+  app.use('/api/shop', require('./api/shop'));
 }
