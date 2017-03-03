@@ -9,16 +9,23 @@ var findOrCreate = require('mongoose-find-one-or-create');
 var user = new Schema({
   name: String,
   age: Number,
+  gender: String,
   username: {
     type: String,
     lowercase: true
   },
+
   role: {
     type: String,
     default: 'user'
   },
   salt: String,
-  password: String
+  password: String,
+  provider: String,
+  status: {
+    type: String,
+    default: 'active'
+  }
 });
 
 user.plugin(findOrCreate);

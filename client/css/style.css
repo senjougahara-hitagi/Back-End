@@ -967,3 +967,16 @@ h5 {
   margin-top: 30px;
   color: #000000;
 }
+
+.home-openshop {
+  position: fixed;
+  bottom: 30px;
+  background: transparent;
+  border-radius: 100%;
+  border: none;
+}
+
+.home-openshop a{
+  display: block;
+  text-align: center;
+}

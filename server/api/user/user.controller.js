@@ -19,6 +19,7 @@ module.exports = {
         }
       })
   },
+
   edit: function(req,res){
     if(req.body){
       User.findOne({username: req.body.username}).exec(function(err, data){
@@ -41,6 +42,8 @@ module.exports = {
       res.json({status: false, message: 'Update fail!!!'})
     }
   },
+
+
   addUser: function(req, res) {
     if (req.body) {
       User.findOne({username: req.body.username}).exec(function(err, data){
@@ -91,6 +94,26 @@ module.exports = {
     }
   },
 
+  findByUserName : function(req, res){
+    if (req.params.username) {
+      User.find({username: {'$regex': req.params.username}}).exec(function(err, data){
+        res.json(data);
+      });
+    } else {
+      res.json([]);
+    }
+  },
+
+  findByGender : function(req, res){
+    if(req.params.gender) {
+      User.find({gender: {'$regex': req.params.gender}}).exec(function(err, data){
+        res.json(data);
+      });
+    } else {
+      res.json([]);
+    }
+  },
+
   find : function(req, res){
     if (req.query) {
       var query = {};
@@ -119,5 +142,23 @@ module.exports = {
     } else {
       res.json([]);
     }
+  },
+
+  loginUser: function(req, res) {
+    User.findOne({username: req.params.account})
+      .exec(function(err, data){
+        if (data){
+          data.remove(function(err){
+            if (err){
+              res.json({status: false, message:'User not found!!!'});
+            }else{
+              res.json({status: true, message:'Login succeed!!!'});
+            }
+          })
+        }else{
+          res.json({status: false, message:'User not found!!!'});
+        }
+      })
   }
+
 }
