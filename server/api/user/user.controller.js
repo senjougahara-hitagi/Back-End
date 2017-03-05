@@ -145,18 +145,18 @@ module.exports = {
   },
 
   loginUser: function(req, res) {
-    User.findOne({username: req.params.account})
+    console.log(req.body);
+    User.findOne({username: req.body.username})
       .exec(function(err, data){
+        console.log(data);
         if (data){
-          data.remove(function(err){
-            if (err){
-              res.json({status: false, message:'User not found!!!'});
-            }else{
-              res.json({status: true, message:'Login succeed!!!'});
-            }
-          })
-        }else{
-          res.json({status: false, message:'User not found!!!'});
+          if(req.body.password == data.password){
+            res.json({status: true, message:'Login succeed!!!'});
+          } else{
+            res.json({status: false, message:'password sai roi!!!'});
+          }
+        } else{
+          res.json({status: false, message:'user not found!!!'});
         }
       })
   }
