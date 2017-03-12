@@ -13,7 +13,7 @@
     <script type="text/javascript" src="libs/bootstrap/js/handlebars-v4.0.5.js"></script>
     <script type="text/javascript" src="libs/bootstrap/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="libs/jquery-ui.js"></script>
-
+    <script type="text/javascript" src="app.js"></script>
 
 
     <title></title>
@@ -325,46 +325,3 @@
   </section>
   </body>
 </html>
-<script type= "text/javascript">
-
-function checkform(){
-  var username =document.getElementById("username").value;
-  var password =document.getElementById("password").value;
-  var password1 =document.getElementById("password1").value;
-  var password_error = document.getElementById("password_error");
-  if(username==""){
-    document.getElementById("name_error").innerHTML ="Username is required";
-
-
-  }else {
-    document.getElementById("name_error").innerHTML ="";
-  }
-
-  if(password==""){
-    document.getElementById("password_error").innerHTML ="Password required";
-
-
-
-  }else {
-    document.getElementById("password_error").innerHTML ="";
-  }
-  if(password1==""){
-    document.getElementById("password_error1").innerHTML ="Password required";
-
-
-
-  }else {
-    document.getElementById("password_error").innerHTML ="";
-  }
-  if(password!=password1){
-      document.getElementById("password_error").innerHTML ="The two passwords do not match";
-  }else {
-    document.getElementById("password_error").innerHTML ="";
-  }
-  if(username!=""&&password!=""&&password==password1){
-    window.location="index.html";
-  }
-}
-
-
-	</script>
