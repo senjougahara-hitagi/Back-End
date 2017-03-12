@@ -14,14 +14,16 @@ var user = new Schema({
     type: String,
     lowercase: true
   },
-
   role: {
     type: String,
     default: 'user'
   },
   salt: String,
   password: String,
-  provider: String,
+  provider: {
+    type: String,
+    default: 'local'
+  },
   status: {
     type: String,
     default: 'active'
