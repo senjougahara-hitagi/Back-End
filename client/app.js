@@ -39,3 +39,22 @@ function checkform(){
     window.location="baithiso1.html";
   }
 }
+
+$(document).ready(function() {
+  $("#sign_up_form").submit(function(e) {
+    // console.log("sign up");
+    e.preventDefault();
+    var data = $(this).serialize();
+    console.log("form data",data);
+    $.ajax({
+      type: "POST",
+      url: "/api/user/create",
+      data: data
+    }).done(function(data) {
+      console.log("success");
+    }).fail(function(err) {
+      console.log(err);
+    })
+    return false;
+  })
+})
