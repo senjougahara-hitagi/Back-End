@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script type="text/javascript" src="libs/bootstrap/js/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="libs/jquery-ui.css"> -->
-
     <link rel="stylesheet" type="text/css" href="css/usersingup.css">
-
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 
     <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
@@ -17,7 +14,7 @@
     <script type="text/javascript" src="libs/bootstrap/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="libs/jquery-ui.js"></script>
 
-    <script type="text/javascript" src="js/main.js"></script>
+
 
     <title></title>
   </head>
@@ -84,46 +81,39 @@
     </header>
 
     <div class="row">
-      <div class="homesingup">
+      <div class="up col-sm-12">
+
+      </div>
     </div>
-    </div>
-    <!-- <script>
-      $('#submit_form').submit(function (e) {
-          e.preventDefault();
-      })
-    </script> -->
-   <form method="get" action="index.html" id="submit_form">
+
+   <form method="post" >
     <div class="unit ">
       <div class="logup text center">
         <h2>Create new account</h2>
       </div>
-      <div class="ui-formRow">
+      <div class="ui-formRow ">
+        <div class="form-group collection">
         <label class="labe" for="gender">Gender :</label>
 
-          <input class="gender1" id="male" value="male" type="radio" name="gender">
-          <label for = "male"> Male</label>
-          <input class="gender2" id="female" value="female" type="radio" name="gender">
-          <label for = "male"> Female</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Femaale</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Male</label>
 
       </div>
+    </div>
       <div class="formse">
 
         <div class="ui-formRow">
-          <div class="col1 txtRight">
-              <label class="mst " for="email">Email</label>*
+          <div class="form-group collection">
+            <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+      			<div id="name_error" class="val_error"></div>
           </div>
-            <div class="collection">
-              <input class="emails" name="email" id="email" type="email">
-            </div>
         </div>
 
         <div class="ui-formRow">
-          <div class="col1 txtRight">
-            <label class="mst" for="date">Date</label>
-          </div>
+          <div class=" collection">
+            <label  for="date">Date :</label>
               <div>
-                <div class="collection">
-    <select class="input-text Day" name="day" id="day">
+    <select class="input-text Day " name="day" id="day">
     <option value="" selected="selected">day</option>
     <option value="01">01</option>
     <option value="02">02</option>
@@ -172,7 +162,7 @@
     <option value="11">11</option>
     <option value="12">12</option>
     </select>
-    <select class="input-text year" name="year" id="year">
+    <select class=class="input-text   year" name="year" id="year">
     <option value="selected">year</option>
     <option value="2017">2017</option>
     <option value="2016">2016</option>
@@ -297,31 +287,30 @@
   </div>
     </div>
       <div class="ui-formRow">
-        <div class="col1 txtRight">
-          <label class="mst " for="password">Mật khẩu <span class="required">*</span></label>
-          </div>
-                <div class="collection">
-                  <input class="password" name="password" id="password" type="password" >
-                </div>
-                  <span>   *The password must contain at least 6 characters including alphanumeric  </span>
+        <div class="form-group collection">
+         <label for="pass">Password:</label>
+         <input type="password" name="password" id ="password" class="form-control" placeholder="Password">
+         <div id="password_error" class="val_error"></div>
+
+        </div>
+                  <!-- <span>   *The password must contain at least 6 characters including alphanumeric  </span> -->
       </div>
       <div class="ui-formRow">
-        <div class="col1 txtRight">
-          <label class="mst" for="password2">Enter the password  <span class="required">*</span></label>
+        <div class="form-group collection">
+         <label for="">Enter the password :</label>*
+         <input type="password" name="password_confirmation" id ="password1" class="form-control" placeholder="password confirmation">
+   			<div id="password_error1" class="val_error"></div>
         </div>
-          <div class="collection">
-            <input class="mst " name="password2" id="password2" type="password">
-          </div>
-      </div>
-        <!-- <div class=" tel">
-          <input type="tel" name="tel" value="" size="86"   placeholder="Phone number (Request):">
-        </div> -->
 
-        <div class="ui-formRow mtl">
+      </div>
+
+
+
+        <div class="ui-formRo row">
 
           <div class="col1">
             <p>* Required Information</p>
-          <button class="submit-button" type="submit" id="send"><span>Send</span></button>
+          <button onclick ="checkform(); return false;" type="submit"class="send btn-primary"  >Send</button>
           <button input type="reset"  id="button"/><span style="color:#fff">Reset</span></button>
           </div>
         </div>
@@ -336,3 +325,46 @@
   </section>
   </body>
 </html>
+<script type= "text/javascript">
+
+function checkform(){
+  var username =document.getElementById("username").value;
+  var password =document.getElementById("password").value;
+  var password1 =document.getElementById("password1").value;
+  var password_error = document.getElementById("password_error");
+  if(username==""){
+    document.getElementById("name_error").innerHTML ="Username is required";
+
+
+  }else {
+    document.getElementById("name_error").innerHTML ="";
+  }
+
+  if(password==""){
+    document.getElementById("password_error").innerHTML ="Password required";
+
+
+
+  }else {
+    document.getElementById("password_error").innerHTML ="";
+  }
+  if(password1==""){
+    document.getElementById("password_error1").innerHTML ="Password required";
+
+
+
+  }else {
+    document.getElementById("password_error").innerHTML ="";
+  }
+  if(password!=password1){
+      document.getElementById("password_error").innerHTML ="The two passwords do not match";
+  }else {
+    document.getElementById("password_error").innerHTML ="";
+  }
+  if(username!=""&&password!=""&&password==password1){
+    window.location="index.html";
+  }
+}
+
+
+	</script>
