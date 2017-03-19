@@ -1,153 +1,156 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script type="text/javascript" src="libs/bootstrap/js/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/usersignup.css">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 
-    <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="libs/imagesloaded.pkgd.min.js"></script>
-    <script type="text/javascript" src="libs/bootstrap/js/handlebars-v4.0.5.js"></script>
-    <script type="text/javascript" src="libs/bootstrap/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="libs/jquery-ui.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script type="text/javascript" src="libs/bootstrap/js/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/usersignup.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+
+  <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="libs/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="libs/bootstrap/js/handlebars-v4.0.5.js"></script>
+  <script type="text/javascript" src="libs/bootstrap/js/masonry.pkgd.min.js"></script>
+  <script type="text/javascript" src="libs/jquery-ui.js"></script>
+  <script type="text/javascript" src="app.js"></script>
 
 
-    <title></title>
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="container-fluid">
-        <div class="row banner">
 
-          <div class="menu-container">
-            <div class="col-sm-12 navbar-menu" id="id-navbar-menu">
-              <nav class="navbar navbar-default">
-                <div>
-                  <h1>
+  <title></title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row banner">
+
+        <div class="menu-container">
+          <div class="col-sm-12 navbar-menu" id="id-navbar-menu">
+            <nav class="navbar navbar-default">
+              <div>
+                <h1>
                     <div class="col-sm-3 text-center site_logo">
                       <img src="img/logo3.png" alt="Chuoi xanh logo"/>
                     </div>
                   </h1>
-                </div>
+              </div>
 
-                <!--make menu small-->
-                <div class="header-menu">
-                  <div class="menu-small">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+              <!--make menu small-->
+              <div class="header-menu">
+                <div class="menu-small">
+                  <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                  </div>
                 </div>
-                <!--MENU+LOGO-->
-                <ul class="nav navbar-nav navbar-collapse collapse" id="navbar-collapse">
-                  <li>
-                    <a href="#home" class="active">Home</a>
-                    <div class="underline_menu"></div>
-                  </li>
-                  <li>
-                    <a href="#shop_section">Shop</a>
-                    <div class="underline_menu"></div>
-                  </li>
-                  <li>
-                    <a href="#product">HOT products</a>
-                    <div class="underline_menu"></div>
-                  </li>
-                  <li>
-                    <a href="#shop_section">Promotions</a>
-                    <div class="underline_menu"></div>
-                  </li>
-                  <li>
-                    <a href="#homes-inf">Order</a>
-                    <div class="underline_menu"></div>
-                  </li>
-                  <li>
-                    <a href="#">About us</a>
-                    <div class="underline_menu"></div>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+              </div>
+              <!--MENU+LOGO-->
+              <ul class="nav navbar-nav navbar-collapse collapse" id="navbar-collapse">
+                <li>
+                  <a href="#home" class="active">Home</a>
+                  <div class="underline_menu"></div>
+                </li>
+                <li>
+                  <a href="#shop_section">Shop</a>
+                  <div class="underline_menu"></div>
+                </li>
+                <li>
+                  <a href="#product">HOT products</a>
+                  <div class="underline_menu"></div>
+                </li>
+                <li>
+                  <a href="#shop_section">Promotions</a>
+                  <div class="underline_menu"></div>
+                </li>
+                <li>
+                  <a href="#homes-inf">Order</a>
+                  <div class="underline_menu"></div>
+                </li>
+                <li>
+                  <a href="#">About us</a>
+                  <div class="underline_menu"></div>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </header>
-
-    <div class="row">
-      <div class="up col-sm-12">
-
-      </div>
     </div>
+  </header>
 
-   <form method="post" >
+  <div class="row">
+    <div class="up col-sm-12">
+
+    </div>
+  </div>
+
+  <form id="sign_up_form">
     <div class="unit ">
       <div class="logup text center">
         <h2>Create new account</h2>
       </div>
       <div class="ui-formRow ">
         <div class="form-group collection">
-        <label class="labe" for="gender">Gender :</label>
+          <label class="labe" for="gender">Gender :</label>
 
-        <label class="radio-inline"><input type="radio" name="optradio">Female</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Male</label>
+          <label class="radio-inline"><input type="radio" name="optradio">Female</label>
+          <label class="radio-inline"><input type="radio" name="optradio">Male</label>
 
+        </div>
       </div>
-    </div>
       <div class="formse">
 
         <div class="ui-formRow">
           <div class="form-group collection">
+            <label >Username</label>
             <input type="text" name="username" id="username" class="form-control" placeholder="Username">
-      			<div id="name_error" class="val_error"></div>
+            <div id="name_error" class="val_error"></div>
           </div>
         </div>
-
         <div class="ui-formRow">
           <div class=" collection">
-            <label  for="date">Date of Birth:</label>
-              <div>
-    <select class="input-text Day " name="day" id="day">
-    <option value="" selected="selected">day</option>
-    <option value="01">01</option>
-    <option value="02">02</option>
-    <option value="03">03</option>
-    <option value="04">04</option>
-    <option value="05">05</option>
-    <option value="06">06</option>
-    <option value="07">07</option>
-    <option value="08">08</option>
-    <option value="09">09</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
-    <option value="19">19</option>
-    <option value="20">20</option>
-    <option value="21">21</option>
-    <option value="22">22</option>
-    <option value="23">23</option>
-    <option value="24">24</option>
-    <option value="25">25</option>
-    <option value="26">26</option>
-    <option value="27">27</option>
-    <option value="28">28</option>
-    <option value="29">29</option>
-    <option value="30">30</option>
-    <option value="31">31</option>
-    </select>
-     <select class="input-text month" name="month" id="month">
+            <label for="date">Date :</label>
+            <div>
+              <select class="input-text Day " name="day" id="day">
+                <option value="" selected="selected">day</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+              <select class="input-text month" name="month" id="month">
     <option value="selected">month</option>
     <option value="01">1</option>
     <option value="02">2</option>
@@ -162,7 +165,7 @@
     <option value="11">11</option>
     <option value="12">12</option>
     </select>
-    <select class=class="input-text   year" name="year" id="year">
+              <select class="input-text   year" name="year" id="year">
     <option value="selected">year</option>
     <option value="2017">2017</option>
     <option value="2016">2016</option>
@@ -283,26 +286,26 @@
     <option value="1901">1901</option>
     <option value="1900">1900</option>
     </select>
-   </div>
-  </div>
-    </div>
-      <div class="ui-formRow">
-        <div class="form-group collection">
-         <label for="pass">Password:</label>
-         <input type="password" name="password" id ="password" class="form-control" placeholder="Password">
-         <div id="password_error" class="val_error"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-formRow">
+          <div class="form-group collection">
+            <label for="pass">Password:</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+            <div id="password_error" class="val_error"></div>
+
+          </div>
+          <!-- <span>   *The password must contain at least 6 characters including alphanumeric  </span> -->
+        </div>
+        <div class="ui-formRow">
+          <div class="form-group collection">
+            <label for="">Enter the password :</label>*
+            <input type="password" name="password_confirmation" id="password1" class="form-control" placeholder="password confirmation">
+            <div id="password_error1" class="val_error"></div>
+          </div>
 
         </div>
-                  <!-- <span>   *The password must contain at least 6 characters including alphanumeric  </span> -->
-      </div>
-      <div class="ui-formRow">
-        <div class="form-group collection">
-         <label for="">Enter the password :</label>*
-         <input type="password" name="password_confirmation" id ="password1" class="form-control" placeholder="password confirmation">
-   			<div id="password_error1" class="val_error"></div>
-        </div>
-
-      </div>
 
 
 
@@ -310,8 +313,8 @@
 
           <div class="col1">
             <p>* Required Information</p>
-          <button onclick ="checkform(); return false;" type="submit"class="send btn-primary"  >Send</button>
-          <button input type="reset"  id="button"/><span style="color:#fff">Reset</span></button>
+            <button onclick="checkform(); return false;" type="submit" class="send btn-primary">Send</button>
+            <button input type="reset" id="button"><span style="color:#fff">Reset</span></button>
           </div>
         </div>
       </div>
@@ -320,8 +323,9 @@
   <section class="home_end target">
     <div class="text-center">
       <div class=" footer-section-1">
-      <a href="http://www.facebook.com" target="_blank">CHUỐI XANH .COM</a>
+        <a href="http://www.facebook.com" target="_blank">CHUỐI XANH .COM</a>
+      </div>
     </div>
   </section>
-  </body>
+</body>
 </html>

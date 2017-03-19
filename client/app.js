@@ -1,3 +1,5 @@
+console.log("app.js");
+
 function checkform(){
   var username =document.getElementById("username").value;
   var password =document.getElementById("password").value;
@@ -33,13 +35,16 @@ function checkform(){
     document.getElementById("password_error").innerHTML ="";
   }
   if(username!=""&&password!=""&&password==password1){
-    window.location="index.html";
+    window.location="";
   }
 }
 
+
+
+
 $(document).ready(function() {
   $("#sign_up_form").submit(function(e) {
-    // console.log("sign up");
+    console.log("sign up");
     e.preventDefault();
     var data = $(this).serialize();
     console.log("form data",data);
@@ -50,7 +55,7 @@ $(document).ready(function() {
     }).done(function(data) {
       console.log("success");
     }).fail(function(err) {
-      console.log(err);
+
     })
     return false;
   })
