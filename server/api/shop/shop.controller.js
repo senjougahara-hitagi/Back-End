@@ -1,6 +1,7 @@
 'use strict';
 
 var shopData = require('./shop.model');
+var db = require('../db.js');
 
 module.exports = {
   findAll : function(req, res){
@@ -12,12 +13,15 @@ module.exports = {
   },
 
   add: function(req, res) {
-    shopData.create(req.body, function(err, data){
-      console.log(err);
-      if (err) {
-        res.json({message: 'Fail'});
-      }
-      res.json({message: 'Success'});
+    db.getNewId(shopData, function(err, id){
+      req.body.id = id;
+      shopData.create(req.body, function(err, data){
+        // console.log(err);
+        if (err) {
+          res.json({message: 'Fail'});
+        }
+        res.json({message: 'Success'});
+      });
     });
   }
 }
