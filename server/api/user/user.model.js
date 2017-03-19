@@ -7,8 +7,8 @@ var Schema = mongoose.Schema;
 var findOrCreate = require('mongoose-find-one-or-create');
 
 var user = new Schema({
+  id: Number,
   name: String,
-  age: Number,
   gender: String,
   username: {
     type: String,

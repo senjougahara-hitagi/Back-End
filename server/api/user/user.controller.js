@@ -51,11 +51,12 @@ module.exports = {
           res.json({status: false, message: 'User are already exist!'})
         } else {
           var newUser = {
+            id: req.body.id,
             username: req.body.username,
             password: req.body.password,
             role: req.body.role,
-            age: req.body.age,
-            name: req.body.name
+            name: req.body.name,
+            gender: req.body.gender
           }
           console.log(newUser);
           User.create(newUser, function(err, data){
