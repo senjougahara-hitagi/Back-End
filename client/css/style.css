@@ -983,3 +983,14 @@ h5 {
 .singup{
   background: #ffffff;
 }
+.modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white
+      text-align: center;
+
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+  
