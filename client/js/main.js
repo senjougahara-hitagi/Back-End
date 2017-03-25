@@ -59,9 +59,9 @@ $(document).ready(function(){
     console.log("Error: " + error);
   });
 // ----------------------------
-  // $(function () {
-  //
-  // });
+    // $.ajax({
+    //
+    // })
 //-----------------------------
   $( function() {
     $( "#tab-list" ).tabs({

@@ -1,0 +1,57 @@
+.menu-container{
+
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: auto;
+
+}
+
+.menu-container span{
+  color: #402E2A;
+  display: inline-block;
+  height: auto;
+  width: 100px;
+  line-height: 30px;
+  position: relative;
+  padding: 10px auto;
+  font-weight: bold;
+}
+
+.menu-container .site_logo img{
+  width: 50%;
+  background: transparent;
+  text-align: center;
+}
+
+
+.container{
+    margin-top:20px;
+}
+.image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+.shopname{
+  padding-top: 30px;
+}

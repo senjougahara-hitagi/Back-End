@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script type="text/javascript" src="libs/bootstrap/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/openshop.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="libs/jquery-ui.js"></script>
+
+    <title></title>
+  </head>
+
+
+  <body>
+    <header class="header">
+        <div class="fluid">
+            <div class="row banner">
+                <div class="menu-container">
+                    <div class="col-sm-12 navbar-menu" id="id-navbar-menu">
+                        <nav class="navbar navbar-default">
+                            <div>
+                              <div class="col-sm-3 text-center site_logo">
+                                <img src="img/logo3.png" alt="Chuoi xanh logo"/>
+                              </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="shopUser">
+      <div class="container">
+        <div class="row">
+             <div class="col-sm-6">
+               <div class="input-group">
+                <span class="input-group-addon">Name Shop<i class="" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="nameshop" id="nameshop"  placeholder="Enter your shop name"/>
+               </div>
+           </div>
+         </div>
+
+        <div class="row shopname">
+          <div class="col-sm-6">
+            <div class="input-group image-preview">
+                <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                        <span class="glyphicon glyphicon-remove"></span> Clear
+                    </button>
+                    <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title">Avata</span>
+                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                    </div>
+                </span>
+            </div>
+            <div class="row shopname">
+              <div class="col-sm-9">
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-labeled btn-primary"> <span class="btn-label"><i class="glyphicon glyphicon-upload"></i> </span>Upload</button>
+              </div>
+            </div>
+        </div>
+
+        </div>
+
+
+      </div>
+    </section>
+  </body>
+</html>

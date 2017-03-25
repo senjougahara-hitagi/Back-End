@@ -1,7 +1,7 @@
 'use strict';
 
 var User = require('./user.model');
-
+// var db = require('..db.js');
 module.exports = {
   deleteUser: function(req, res){
     console.log(req);
@@ -88,9 +88,10 @@ module.exports = {
 
   findByName : function(req, res){
     if (req.params.name) {
-      User.find({name: {'$regex': req.params.name}}).exec(function(err, data){
-        res.json(data);
-      });
+      User.find({name: {'$regex': req.params.name}})
+          .exec(function(err, data){
+            res.json(data);
+          });
     } else {
       res.json([]);
     }

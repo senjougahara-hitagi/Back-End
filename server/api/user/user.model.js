@@ -19,10 +19,17 @@ var user = new Schema({
     default: 'user'
   },
   salt: String,
+
   password: String,
+
   provider: {
     type: String,
     default: 'local'
+  },
+  
+  avatar: {
+    type: String,
+    default: 'http://www.hayy.net/Content/img/custom/default-avatar.png'
   },
   status: {
     type: String,
