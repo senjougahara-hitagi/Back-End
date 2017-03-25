@@ -984,13 +984,15 @@ h5 {
   background: #ffffff;
 }
 .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white
-      text-align: center;
+    background-color: #5cb85c;
+    color:white
+    text-align: center;
 
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
+}
+.modal-footer {
+    background-color: #f9f9f9;
+}
 
-  
+#myModal {
+  z-index: 99999;
+}
