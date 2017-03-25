@@ -996,8 +996,3 @@ h5 {
 #myModal {
   z-index: 99999;
 }
-
-#user_btn>nav {
-  display: none;
-  padding-left: 1px;
-}

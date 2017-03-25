@@ -151,9 +151,6 @@ $(document).ready(function(){
     })
   })
 
-  $("#user_btn").hover(function(){
-    $(".user_menu").css("display" , "inline-block");
-  });
 });
 
 // ----------------------------
