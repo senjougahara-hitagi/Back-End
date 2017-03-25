@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script type="text/javascript" src="../libs/bootstrap/js/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="libs/jquery-ui.css"> -->
+    <link rel="stylesheet" href="../libs/jquery-ui.css">
 
     <link rel="stylesheet" type="text/css" href="admin.css">
 
@@ -21,90 +21,108 @@
     <script type="text/javascript" src="admin.js"></script>
 
     <title></title>
+
+    <script>
+    $( function() {
+      $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+      $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+    } );
+    </script>
   </head>
   <body>
-    <div class="">
+    <div id="tabs">
 
-      <div class="container">
-        <div class="row text-center">
-          <h2> User Management</h2>
-        </div>
-        <form class="" action="" method="post" id="search_form">
-          <div class="row">
-            <div class="col-sm-3 ">
-              <div>Users</div>
-              <div>Shops</div>
-              <div>Products</div>
-            </div>
-            <div class="col-sm-4">
-              <div class="row">
-                <div class="col-sm-4">
-                  Username
-                </div>
-                <div class="col-sm-8">
-                  <input name="username" type="text" class="form-control"/>
-                </div>
+      <ul>
+        <li><a href="#tabs-1">Users</a></li>
+        <li><a href="#tabs-2">Shops</a></li>
+      </ul>
+      <div id="tabs-1">
+        <div class="container">
+          <div class="row text-center">
+            <h2> User Management</h2>
+          </div>
+          <form class="" action="" method="post" id="search_form">
+            <div class="row">
+              <div class="col-sm-1">
               </div>
-              <div class="row">
-                <div class="col-sm-4">
-                  Role
+              <div class="col-sm-4">
+                <div class="row">
+                  <div class="col-sm-4">
+                    Username
+                  </div>
+                  <div class="col-sm-8">
+                    <input name="username" type="text" class="form-control"/>
+                  </div>
                 </div>
-                <div class="col-sm-8">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <input name="role" type="radio" value="admin"/>
-                      Admin
-                    </div>
-                    <div class="col-sm-6">
-                      <input name="role" type="radio" value="user"/>
-                      User
+                <div class="row">
+                  <div class="col-sm-4">
+                    Role
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <input name="role" type="radio" value="admin"/>
+                        Admin
+                      </div>
+                      <div class="col-sm-6">
+                        <input name="role" type="radio" value="user"/>
+                        User
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-5">
-              <div class="row">
-                <div class="col-sm-4">
-                  Shop's name
-                </div>
-                <div class="col-sm-8">
-                  <input name="name" type="text" class="form-control"/>
+              <div class="col-sm-5">
+                <div class="row">
+                  <div class="col-sm-4">
+                    Shop's name
+                  </div>
+                  <div class="col-sm-8">
+                    <input name="name" type="text" class="form-control"/>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row send">
-            <button type="submit" class="btn btn-primary"><span>Search</span></button>
-          </div>
-        </form>
-      </div>
-      <div class="row ">
-        <div class="col-sm-3">
+            <div class="row send">
+              <button type="submit" class="btn btn-primary"><span>Search</span></button>
+              <button type="reset" class="btn btn-primary"><span>Reset</span></button>
+            </div>
+          </form>
         </div>
-        <div class="col-sm-9 text-center">
-          <table  class="table table-bordered">
-            <tr>
-              <td>Shop's name</td>
-              <td>Username</td>
-              <td>Role</td>
-              <td>Action</td>
-            </tr>
+        <div class="row ">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-9 text-center">
+            <table  class="table table-bordered">
+              <tr>
+                <td>Shop's name</td>
+                <td>Username</td>
+                <td>Role</td>
+                <td>Action</td>
+              </tr>
 
-          </table>
-          <table  class="table table-bordered" id="table_member">
-          </table>
+            </table>
+            <table  class="table table-bordered" id="table_member">
+            </table>
+          </div>
         </div>
       </div>
 
+      <div id="tabs-2">
+        <div class="text-center">
+          <h2> Shops Management</h2>
+        </div>
+
+        
+      </div>
     </div>
 
     <script id="list_member" type="text/x-handlebars-template">
       {{#each items}}
       <tr class="member" id="item_{{username}}">
-        <td>{{name}}</td>
-        <td>{{username}}</td>
-        <td>{{role}}</td>
+        <td class="name">{{name}}</td>
+        <td class="username">{{username}}</td>
+        <td class="role">{{role}}</td>
         <td>
           <button class="btn btn-primary edit_btn" data-member="{{username}}">Edit</button>
           <button class="btn btn-primary delete_btn" data-member="{{username}}">Delete</button>
@@ -129,11 +147,11 @@
         <div class="edit">
           Edit member with username: {{username}}
           <div>
-            <span id="old_name_{{username}}" value="{{name}}">Old shop's name: {{name}}</span>
+            <span>Old shop's name: <span id="old_name_{{username}}">{{name}}</span></span>
             <span>New shop's name: </span>
             <input type="text" name="name" value="">
             <br>
-            <span id="old_role_{{username}}" value="{{role}}">Old role: {{role}}</span>
+            <span>Old role: <span id="old_role_{{username}}">{{role}}</span></span>
             <span>New role: </span>
             <input type="radio" name="role" value="user">User
             <input type="radio" name="role" value="admin">Admin
@@ -145,6 +163,10 @@
       </form>
 
     </script>
+
+    <div id="dialog-confirm" title="Delete this User?">
+      <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+    </div>
 
   </body>
 </html>

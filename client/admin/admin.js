@@ -1,6 +1,9 @@
 console.log("admin loaded");
 
 $( document ).ready(function() {
+
+  $( "#dialog-confirm" ).hide();
+
   var search_data;
   var source = $("#list_member").html();
   var listMember = Handlebars.compile(source);
@@ -27,15 +30,31 @@ $( document ).ready(function() {
 
   $('body').on('click', '.btn.delete_btn', function(){
     var username = $(this).attr('data-member');
-    $.ajax({
-      type: "delete",
-      url: "/api/user/delete/" + username,
-      contentType : "application/json"
-    }).then(function(data) {
-      $("#item_" + username).remove();
-    }).fail(function(err) {
-      console.log("Error " + err);
-    })
+    $( function() {
+      $( "#dialog-confirm" ).dialog({
+        resizable: false,
+        height: "auto",
+        width: 400,
+        modal: true,
+        buttons: {
+          "Delete": function() {
+            $.ajax({
+              type: "delete",
+              url: "/api/user/delete/" + username,
+              contentType : "application/json"
+            }).then(function(data) {
+              $("#item_" + username).remove();
+            }).fail(function(err) {
+              console.log("Error " + err);
+            })
+            $( this ).dialog( "close" );
+          },
+          Cancel: function() {
+            $( this ).dialog( "close" );
+          }
+        }
+      });
+    });
   });
 
 
@@ -55,10 +74,10 @@ $( document ).ready(function() {
         edit_data.username = document.forms["edit_form"]["username"].value;
 
         edit_data.name = document.forms["edit_form"]["name"].value;
-        if(edit_data.name == "") edit_data.name = $("#old_name").val();
+        if(edit_data.name == "") edit_data.name = $("#old_name_" + username).html();
 
         edit_data.role = document.forms["edit_form"]["role"].value;
-        if(edit_data.role == "") edit_data.role = $("#old_role").val();
+        if(edit_data.role == "") edit_data.role = $("#old_role_" + username).html();
 
         $.ajax({
           type: "put",
@@ -69,6 +88,12 @@ $( document ).ready(function() {
         }).fail(function(err) {
           console.log("Error " + err);
         })
+        $("#edit-member-modal").modal("hide");
+
+        $("#item_" + username).find(".name").html(edit_data.name);
+        $("#item_" + username).find(".username").html(edit_data.username);
+        $("#item_" + username).find(".role").html(edit_data.role);
+
         return false;
       });
     }).fail(function(err) {
@@ -76,4 +101,5 @@ $( document ).ready(function() {
     })
     $("#edit-member-modal").modal("show");
   });
+
 })
