@@ -23,5 +23,11 @@ module.exports = {
         res.json({message: 'Success'});
       });
     });
+  },
+
+  find: function(req, res){
+    shopData.findOne({id : req.body.id}).exec(function(err, data){
+      res.json(data);
+    });
   }
 }

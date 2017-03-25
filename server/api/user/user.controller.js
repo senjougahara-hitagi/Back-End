@@ -1,7 +1,8 @@
 'use strict';
 
 var User = require('./user.model');
-// var db = require('..db.js');
+var db = require('../db.js');
+
 module.exports = {
   deleteUser: function(req, res){
     console.log(req);
@@ -51,18 +52,20 @@ module.exports = {
         if (data) {
           res.json({status: false, message: 'User are already exist!'})
         } else {
-          var newUser = {
-            id: req.body.id,
-            username: req.body.username,
-            password: req.body.password,
-            role: req.body.role,
-            name: req.body.name,
-            gender: req.body.gender
-          }
-          console.log(newUser);
-          User.create(newUser, function(err, data){
-            res.json({status: true, message: 'Success'});
-          });
+          db.getNewId(User, function(err, id){
+            var newUser = {
+              id: id,
+              username: req.body.username,
+              password: req.body.password,
+              role: req.body.role,
+              name: req.body.name,
+              gender: req.body.gender
+            }
+            console.log(newUser);
+            User.create(newUser, function(err, data){
+              res.json({status: true, message: 'Success'});
+            });
+          })
         }
       });
     }

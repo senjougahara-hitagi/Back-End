@@ -8,5 +8,6 @@ var router = express.Router();
 
 router.get('/all', controller.findAll);
 router.post('/add', controller.add);
+router.post('/find', controller.find);
 
 module.exports = router;

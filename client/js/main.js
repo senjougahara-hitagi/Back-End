@@ -143,6 +143,7 @@ $(document).ready(function(){
         data: login_data
       }).then(function(data) {
         $("#user_btn>a").html(data.username);
+        $("#user_btn>.dropdown-menu .myShopBtn").attr("id",data.id);
         $("#user_btn").show();
         $("#myModal").modal('hide');
         $("#login_btn").parent().hide();
