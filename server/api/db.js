@@ -6,7 +6,7 @@ db.getNewId = function(model,cb){
   .select('id')
   .sort({id : -1})
   .exec(function(err,doc){
-    console.log(doc);
+    // console.log(doc);
     err ? cb(err) : cb( null, doc ? doc.id + 1 : 0 );
   })
 }

@@ -1,6 +1,8 @@
 var loadedData = [];
 $(document).ready(function(){
 
+  $("#myModal").hide();
+
   var itemModalTemplate = Handlebars.compile($("#item-modal-template").html());
   $.ajax({
     type : "get",
@@ -127,6 +129,23 @@ $(document).ready(function(){
       }
     });
   });
+
+  $("#login_form").submit(function(e){
+    e.preventDefault();
+    var login_data = {};
+    login_data.username = document.forms["login_form"]["username"].value;
+    login_data.password = document.forms["login_form"]["password"].value;
+    $.ajax({
+      type: "post",
+      url: "/api/user/login",
+      data: login_data
+    }).then(function(data) {
+      console.log("Res: ",data.username);
+      $("#login_btn").html(data.username);
+      $("#myModal").hide();
+    })
+    return false;
+  })
 });
 
 // ----------------------------

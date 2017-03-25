@@ -43,9 +43,10 @@ $( document ).ready(function() {
               url: "/api/user/delete/" + username,
               contentType : "application/json"
             }).then(function(data) {
-              $("#item_" + username).remove();
-            }).fail(function(err) {
-              console.log("Error " + err);
+              $("#accordion").html(data.message);
+              $("#edit-member-modal").modal("show");
+              if(data.status == true)
+                $("#item_" + username).remove();
             })
             $( this ).dialog( "close" );
           },

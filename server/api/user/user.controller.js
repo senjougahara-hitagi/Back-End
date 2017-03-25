@@ -10,9 +10,9 @@ module.exports = {
         if (data){
           data.remove(function(err){
             if (err){
-              res.json({status: false, message:'delete failed!!!'});
+              res.json({status: false, message:'Delete failed!!!'});
             }else{
-              res.json({status: true, message:'delete succeed!!!'});
+              res.json({status: true, message:'Delete succeed!!!'});
             }
           })
         }else{
@@ -152,8 +152,8 @@ module.exports = {
       .exec(function(err, data){
         console.log(data);
         if (data){
-          if(req.body.password == data.password){
-            res.json({status: true, message:'Login succeed!!!'});
+          if(data.authenticate(req.body.password)){
+            res.json(data);
           } else{
             res.json({status: false, message:'password sai roi!!!'});
           }
