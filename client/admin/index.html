@@ -23,90 +23,127 @@
     <title></title>
   </head>
   <body>
-    <div class="container">
-      <div class="row text-center">
-        <h2> User Management</h2>
-      </div>
-      <form class="" action="" method="post" id="search_form">
-        <div class="row">
-          <div class="col-sm-3 ">
-            <div>Users</div>
-            <div>Shops</div>
-            <div>Products</div>
-          </div>
-          <div class="col-sm-4">
-            <div class="row">
-              <div class="col-sm-4">
-                Username
-              </div>
-              <div class="col-sm-8">
-                <input name="username" type="text" class="form-control"/>
-              </div>
+    <div class="">
+
+      <div class="container">
+        <div class="row text-center">
+          <h2> User Management</h2>
+        </div>
+        <form class="" action="" method="post" id="search_form">
+          <div class="row">
+            <div class="col-sm-3 ">
+              <div>Users</div>
+              <div>Shops</div>
+              <div>Products</div>
             </div>
-            <div class="row">
-              <div class="col-sm-4">
-                Role
+            <div class="col-sm-4">
+              <div class="row">
+                <div class="col-sm-4">
+                  Username
+                </div>
+                <div class="col-sm-8">
+                  <input name="username" type="text" class="form-control"/>
+                </div>
               </div>
-              <div class="col-sm-8">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <input name="role" type="radio"/>
-                    Admin
-                  </div>
-                  <div class="col-sm-6">
-                    <input name="role" type="radio"/>
-                    User
+              <div class="row">
+                <div class="col-sm-4">
+                  Role
+                </div>
+                <div class="col-sm-8">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input name="role" type="radio" value="admin"/>
+                      Admin
+                    </div>
+                    <div class="col-sm-6">
+                      <input name="role" type="radio" value="user"/>
+                      User
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-5">
-            <div class="row">
-              <div class="col-sm-4">
-                Account
-              </div>
-              <div class="col-sm-8">
-                <input name="name" type="text" class="form-control"/>
+            <div class="col-sm-5">
+              <div class="row">
+                <div class="col-sm-4">
+                  Shop's name
+                </div>
+                <div class="col-sm-8">
+                  <input name="name" type="text" class="form-control"/>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row send">
-          <button  type="submit" class="btn btn-primary"><span>Search</span></button>
-        </div>
-      </form>
-    </div>
-    <div class="row ">
-      <div class="col-sm-3">
+          <div class="row send">
+            <button type="submit" class="btn btn-primary"><span>Search</span></button>
+          </div>
+        </form>
       </div>
-      <div class="col-sm-9 text-center">
-        <table  class="table table-bordered">
-          <tr>
-            <td>Account</td>
-            <td>Name</td>
-            <td>Role</td>
-            <td>Action</td>
-          </tr>
+      <div class="row ">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-9 text-center">
+          <table  class="table table-bordered">
+            <tr>
+              <td>Shop's name</td>
+              <td>Username</td>
+              <td>Role</td>
+              <td>Action</td>
+            </tr>
 
-        </table>
-        <table  class="table table-bordered" id="table_member">
-        </table>
+          </table>
+          <table  class="table table-bordered" id="table_member">
+          </table>
+        </div>
       </div>
+
     </div>
 
     <script id="list_member" type="text/x-handlebars-template">
       {{#each items}}
-      <tr class="member">
+      <tr class="member" id="item_{{username}}">
         <td>{{name}}</td>
         <td>{{username}}</td>
         <td>{{role}}</td>
         <td>
-          <button  type="submit" id="send" class="btn btn-primary"><span>Edit</span></button>
-          <button  type="submit" id="send" class="btn btn-primary"><span>Delete</span></button>
+          <button class="btn btn-primary edit_btn" data-member="{{username}}">Edit</button>
+          <button class="btn btn-primary delete_btn" data-member="{{username}}">Delete</button>
         </td>
       </tr>
       {{/each}}
+    </script>
+
+    <div class="modal fade" id="edit-member-modal" tabindex="-1" role="dialog" aria-labelledby="member_modal_label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" id="accordion">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script id="edit-member-modal-template" type="text/x-handlebars-template">
+
+      <form action="#" method="put" id="edit_{{username}}" name="edit_form">
+        <div class="edit">
+          Edit member with username: {{username}}
+          <div>
+            <span id="old_name_{{username}}" value="{{name}}">Old shop's name: {{name}}</span>
+            <span>New shop's name: </span>
+            <input type="text" name="name" value="">
+            <br>
+            <span id="old_role_{{username}}" value="{{role}}">Old role: {{role}}</span>
+            <span>New role: </span>
+            <input type="radio" name="role" value="user">User
+            <input type="radio" name="role" value="admin">Admin
+            <br>
+            <button type="submit" name="username" value="{{username}}" class="btn btn-primary done_edit_btn">Ok</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+          </div>
+        </div>
+      </form>
+
     </script>
 
   </body>
