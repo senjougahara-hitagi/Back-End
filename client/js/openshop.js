@@ -52,6 +52,20 @@ $(function() {
             $(".image-preview-filename").val(file.name);
             img.attr('src', e.target.result);
             $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+
+            // $('body').on('click', '#upload', function(){
+            //   var shopData = {};
+            //   shopData.id = 1;//TODO
+            //   shopData.Name = document.forms["edit_shop_form"]["nameshop"].value;
+            //   shopData.Avatar = e.target.result;
+            //   $.ajax({
+            //     type: "post",
+            //     url: "/api/shop/edit",
+            //     data: shopData
+            //   }).then(function(data) {
+            //   })
+            //
+            // })
         }
         reader.readAsDataURL(file);
     });

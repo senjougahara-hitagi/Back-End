@@ -8,6 +8,7 @@ var router = express.Router();
 
 router.get('/all', controller.findAll);
 router.post('/add', controller.add);
-router.post('/find', controller.find);
+router.get('/find', controller.find);
+router.post('/edit', controller.edit);
 
 module.exports = router;

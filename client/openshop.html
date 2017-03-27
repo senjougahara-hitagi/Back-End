@@ -38,6 +38,9 @@
     </header>
     <section class="shopUser">
       <div class="container">
+        <form name="edit_shop_form">
+
+
         <div class="row">
              <div class="col-sm-6">
                <div class="input-group">
@@ -57,7 +60,7 @@
                     </button>
                     <div class="btn btn-default image-preview-input">
                         <span class="glyphicon glyphicon-folder-open"></span>
-                        <span class="image-preview-input-title">Avata</span>
+                        <span class="image-preview-input-title">Avatar</span>
                         <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
                     </div>
                 </span>
@@ -66,14 +69,18 @@
               <div class="col-sm-9">
               </div>
               <div class="col-sm-3">
-                <button type="button" class="btn btn-labeled btn-primary"> <span class="btn-label"><i class="glyphicon glyphicon-upload"></i> </span>Upload</button>
+                <button id="upload" class="btn btn-labeled btn-primary">
+                  <span class="btn-label">
+                    <i class="glyphicon glyphicon-upload"></i>
+                  </span>Upload
+                </button>
               </div>
             </div>
         </div>
 
         </div>
 
-
+        </form>
       </div>
     </section>
   </body>

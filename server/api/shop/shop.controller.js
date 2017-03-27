@@ -26,8 +26,21 @@ module.exports = {
   },
 
   find: function(req, res){
-    shopData.findOne({id : req.body.id}).exec(function(err, data){
+    shopData.findOne({id : req.query.id}).exec(function(err, data){
       res.json(data);
+    });
+  },
+
+  edit: function(req, res){
+    shopData.findOne({id : req.body.id}).exec(function(err, data){
+      data.Name = req.body.Name;
+      data.Avatar = req.body.Avatar;
+      data.save(function(err, newData){
+        if (err) {
+          res.json({message: 'Fail'});
+        }else
+          res.json({message: 'Success', data : newData});
+      })
     });
   }
 }
