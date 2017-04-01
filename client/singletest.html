@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script type="text/javascript" src="libs/bootstrap/js/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="libs/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="libs/bootstrap/js/handlebars-v4.0.5.js"></script>
+  <script type="text/javascript" src="libs/bootstrap/js/masonry.pkgd.min.js"></script>
+  <script type="text/javascript" src="libs/jquery-ui.js"></script>
+  <link href="css/singletest.css" rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="css/etalage.css">
+  <script type="text/javascript" src="app.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/usersignup.css">
+  <script src="libs/jquery.etalage.min.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+
+            $('#etalage').etalage({
+                thumb_image_width: 300,
+                thumb_image_height: 400,
+                source_image_width: 900,
+                source_image_height: 1200,
+                show_hint: true,
+                click_callback: function(image_anchor, instance_id) {
+                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                }
+            });
+
+        });
+    </script>
+
+</head>
+
+<body  style="background-color:#fff;">
+  <header class="header">
+      <div class="container-fluid">
+          <div class="row banner">
+              <div class="menu-container">
+                  <div class="col-sm-12 navbar-menu" id="id-navbar-menu">
+                      <nav class="navbar navbar-default">
+                          <div>
+                              <h1>
+                  <div class="col-sm-3 text-center site_logo">
+                    <img src="img/logo3.png" alt="Chuoi xanh logo"/>
+                  </div>
+                </h1> </div>
+                          <!--make menu small-->
+                          <div class="header-menu">
+                              <div class="menu-small">
+                                  <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                              </div>
+                          </div>
+                          <!--MENU+LOGO-->
+                          <ul class="nav navbar-nav navbar-collapse collapse" id="navbar-collapse">
+                              <li> <a href="index.html" class="active">Home</a>
+                                  <div class="underline_menu"></div>
+                              </li>
+                              <li> <a href="#shop_section">Shop</a>
+                                  <div class="underline_menu"></div>
+                              </li>
+                              <li> <a href="#product">HOT products</a>
+                                  <div class="underline_menu"></div>
+                              </li>
+                              <li> <a href="#shop_section">Promotions</a>
+                                  <div class="underline_menu"></div>
+                              </li>
+                              <li> <a href="#homes-inf">Order</a>
+                                  <div class="underline_menu"></div>
+                              </li>
+                              <li> <a href="cart.html"><img src="img/bag.png">To Cart</a>
+                                  <div class="underline_menu"></div>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+  <div class="row">
+      <div class="up col-sm-12"> </div>
+  </div>
+    <div class="single_top">
+        <div class="container">
+            <div class="single_grid">
+                <div class="grid images_3_of_2">
+                    <ul id="etalage">
+                        <li>
+                            <a href="">
+                                <img class="etalage_thumb_image" src="img/33.jpg" class="img-responsive" />
+                                <img class="etalage_source_image" src="img/33.jpg" class="img-responsive" title="" />
+                            </a>
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="img/items-product/1.jpg" class="img-responsive" />
+                            <img class="etalage_source_image" src="img/items-product/1.jpg" class="img-responsive" title="" />
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image"src="img/items-product/6.jpg" class="img-responsive" />
+                            <img class="etalage_source_image"src="img/items-product/6.jpg" class="img-responsive" />
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="img/items-product/21.jpg" class="img-responsive" />
+                            <img class="etalage_source_image" src="img/items-product/21.jpg" class="img-responsive" />
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="desc1 span_3_of_2">
+
+                    <h1 >CHUOI XANH 1</h1>
+                    <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+                        nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+                        blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum</h5>
+                    <div class="simpleCart_shelfItem">
+                        <div class="price_single">
+                            <div class="head">
+                                <h2><span class="amount item_price">$45.00</span></h2></div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <a class="btn btn-default update" href="cart.html"> Add To Cart</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        <div class="container">
+            <ul class="row menu_drop ">
+                <li class="item1">
+                    <a href="#">Related Products</a>
+                </li>
+                <div class="container">
+                    <div class="box_3">
+                        <div class="col-md-3">
+                            <div class="content_box">
+                                <a href="singletest.html">
+                                    <img  src="img/items-product/1.jpg"  class="img-responsive" alt="">
+                                </a>
+                            </div>
+                            <h4><a href="singletest.html">Product shop 1 </a></h4>
+                            <p>$ 199</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="content_box">
+                                <a href="singletest.html">
+                                    <img  src="img/items-product/6.jpg"  class="img-responsive" alt="">
+                                </a>
+                            </div>
+                            <h4><a href="singletest.html">Product shop 1 </a></h4>
+                            <p>$ 199</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="content_box">
+                                <a href="singletest.html">
+                                    <img src="img/items-product/21.jpg"  class="img-responsive" alt="">
+                                </a>
+                            </div>
+                            <h4><a href="singletest.html">Product shop 1 </a></h4>
+                            <p>$ 199</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="content_box">
+                                <a href="singletest.html">
+                                    <img  src="img/img_shop/cool.png"  class="img-responsive" alt="">
+                                </a>
+                            </div>
+                            <h4><a href="singletest.html">Product shop 1 </a></h4>
+                            <p>$ 199</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>

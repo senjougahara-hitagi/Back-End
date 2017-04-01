@@ -23,7 +23,7 @@ $(document).ready(function(){
         break;
       }
     }
-    $("#item_modal").modal("show");
+      window.location = "singletest.html";
   });
 
 // -----------------------------
